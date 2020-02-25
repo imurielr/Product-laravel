@@ -1,0 +1,51 @@
+ACCESO A LA BASE DE DATOS:
+
+Diríjase a http://localhost/phpmyadmin/ y cree una base de datos llamada 'cannoo', ingrese a esta y presione 
+el botón 'Importar' que se encuentra en la parte superior. 
+
+Seleccione el archivo llamado "dbexport.sql" que se encuentra en el directorio raíz del proyecto, esto le debe 
+crear una tabla llamada 'products';
+
+
+    NOTA:                                                                                                                  
+        En caso de utilizar MySQL localmente (sin phpmyadmin) ejecute el comando reemplazando <username> por un usuario con 
+        acceso a mysql                                                                                                      
+                                                                                                                            
+            $ mysql -u <username> -p                                                                                        
+                                                                                                                            
+        Ingrese la contraseña y cree una nueva base de datos llamada 'cannoo'                                               
+                                                                                                                            
+            mysql> CREATE DATABASE cannoo;                                                                                  
+
+        Salga de mysql e importe la tabla products desde el archivo "dbexport.sql", para esto dirijase al directorio raíz
+        del proyecto y ejecute el siguiente comando:
+
+            $ mysql -u <username> -p cannoo < dbexport.sql
+
+        Donde <username> es el usuario con permisos en la base de datos.
+
+        Una vez ejecutado el comando la base de datos cannoo debe contener una tabla llamada 'products' con 6 productos.  
+        Si desea verificar que si se hayan importado los datos correctamente ejecute los siguientes comandos:
+
+            $ mysql -u <username> -p
+
+            mysql> USE cannoo;
+            mysql> SELECT * FROM products;
+
+
+
+Diríjase al archivo .env y modifique los campos de DB_USERNAME y DB_PASSWORD dependiendo de los usuarios que tenga 
+en phpmyadmin. 
+
+
+EJECUCIÓN DEL PROYECTO:
+
+Para ejecutar el proyecto corra en la terminal el comando 
+    
+    $ php artisan serve
+
+O en caso de utilizar XAMPP o WAMPP guárdelo en el directorio indicado para poder ejecutarlo.
+
+Para acceder al proyecto diríjase a la ruta inicial /index con 
+    
+    http://localhost/Taller1/public/index/ 
