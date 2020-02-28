@@ -8,11 +8,11 @@
         <div class="col-md-12">
             <ul id="errors">
                 <div class="card">
-                    <div class="card-header">{{ $data["product"]["type"] }}</div>
+                    <div class="card-header">{{ $data["product"]->getType() }}</div>
                     <div class="card-body">
                         <ul id="errors">
-                            <b>Price: </b> {{ $data["product"]["price"] }} <br/>
-                            <b>Description: </b> {{ $data["product"]["description"] }}
+                            <b>Price: </b> {{ $data["product"]->getPrice() }} <br/>
+                            <b>Description: </b> {{ $data["product"]->getDescription() }}
                         </ul>
                         <form  action="{{ url('product/delete/'.$data['product']->getId()) }}">
                             <input class="float-right" type="submit" value="Delete Product"/>
